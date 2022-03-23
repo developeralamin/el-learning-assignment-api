@@ -20,5 +20,17 @@ class CourseController extends Controller
    	  return view('frontend.courses_details',compact('course'));
    }
 	 
+  public function Search(Request $request)
+    {
+      $queryString = $request->input('query');
+      // $queryString = 'Pure Nature';
+     $data=Course::where('title','LIKE',"%$queryString%")->get();
+        
+      // return $data  
+      return view('frontend.search.search_course',compact('data','queryString'));
+    
+    }
+
+
 
 }

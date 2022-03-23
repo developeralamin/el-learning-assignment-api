@@ -68,3 +68,16 @@ ul.ul_section {
 .active-lesson{
     background: red;
 }
+
+.slider.search_Section {
+    text-align: center;
+    padding-top: 9%;
+    font-size: 36px;
+    color: currentcolor;
+    font-weight: bold;
+}
+
+a {
+    font-weight: bold;
+    
+}

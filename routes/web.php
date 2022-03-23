@@ -69,6 +69,11 @@ Route::post('/login',[LoginController::class,'login']);
 // Frontend Controllers
 
 Route::get('courses',[FrontendCourseController::class,'allCourses'])->name('allCourses');
+
+Route::get('/search',[FrontendCourseController::class,'Search'])->name('search');
+
+
 Route::get('courses/{id}',[FrontendCourseController::class,'courseShow'])->name('courseShow');
 Route::get('lesson/{lesson}/{slug?}',[FrontendLessonController::class,'LessonShow'])->name('Lesson_details');
+
 
