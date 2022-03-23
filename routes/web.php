@@ -5,19 +5,26 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Frontend\CourseController as FrontendCourseController;
+use App\Http\Controllers\Frontend\LessonController as FrontendLessonController; 
 
 
 
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('frontend.home.home');
+})->name('home');
 
 
-// Route::get('/dashboard',[HomeController::class,'index']);
+// middleware authentication
 
-Route::get('/dashboard',[AdminController::class,'index']);
 
+
+// Route::group(['middleware' => 'auth'],function(){
+
+  
+Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
 
 Route::prefix('category')->group(function(){
 
@@ -27,7 +34,6 @@ Route::prefix('category')->group(function(){
    Route::get('/delete/{id}',[CategoryController::class,'Delete'])->name('category_delete');
 
 });
-
 
 
 Route::prefix('course')->group(function(){
@@ -52,4 +58,17 @@ Route::prefix('lesson')->group(function(){
    Route::get('/show/{id}',[LessonController::class,'show'])->name('lesson_show');
 
 });
+
+
+
+// });
+
+
+Route::get('/login',[LoginController::class,'login_form'])->name('login');
+Route::post('/login',[LoginController::class,'login']);
+// Frontend Controllers
+
+Route::get('courses',[FrontendCourseController::class,'allCourses'])->name('allCourses');
+Route::get('courses/{id}',[FrontendCourseController::class,'courseShow'])->name('courseShow');
+Route::get('lesson/{lesson}/{slug?}',[FrontendLessonController::class,'LessonShow'])->name('Lesson_details');
 

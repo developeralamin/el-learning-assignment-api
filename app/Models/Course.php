@@ -16,7 +16,10 @@ class Course extends Model
    	   return $this->belongsTo(Category::class,'category_id','id');
    }
 
-
+  public function lessons()
+    {
+        return $this->hasMany(Lesson::class,'courese_id','id');
+    }
 
 
 }

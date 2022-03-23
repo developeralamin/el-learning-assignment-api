@@ -34,6 +34,7 @@ Route::post('/category',[CategoryController::class,'insert']);
 // lesson api section
 Route::get('/lesson',[LessonController::class,'test']);
 Route::post('/lesson',[LessonController::class,'insert']);
+Route::delete('/lesson/{id}',[LessonController::class,'delete']);
 
 
 

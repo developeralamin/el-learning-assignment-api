@@ -120,7 +120,7 @@ class CoursesController extends Controller
         'updated_at'             =>Carbon::now(),
       ]);
          }
-         Toastr::success('Course Successfully Update :)' ,'Success');
+      Toastr::success('Course Successfully Update :)' ,'Success');
        return redirect()->route('course');
 
    }
@@ -162,8 +162,8 @@ class CoursesController extends Controller
 // insert with api
    public function insert(Request $request)
    {
-         $course = new Course();
-
+    
+      $course = new Course();
       $course->title      = $request->title;
       $course->description = $request->description;
 

@@ -55,12 +55,11 @@ class CategoryController extends Controller
   // api frontend insert data
 
 
-			// End method api in frontend section
+// End method api in frontend section
 // End method api in frontend section
    public function test()
    {
    	  $categories = Category::all();
-      
       return response()->json([
          'POST' =>$categories
         ],200) ;
@@ -71,13 +70,14 @@ class CategoryController extends Controller
 
    public function insert(Request $request)
    {
-   	   // Category::all();
+
    	   $category = new Category();
    	   $category->name = $request->name;
 
    	   $category->save();
    	   return response()->json([
    	   		'message' => 'Category added successfully'
+
    	   ],201);
    }
 

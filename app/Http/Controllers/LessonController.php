@@ -122,20 +122,25 @@ class LessonController extends Controller
 
    public function insert(Request $request)
    {
-          $lesson = new Lesson();
-
+      $lesson              = new Lesson();
       $lesson->title       = $request->title;
       $lesson->description = $request->description;
 
       $lesson->save();
       return response()->json([
         'message' => 'Lesson added Successfully'
-
       ],201);
+      
 
    }
 
-
+   // public function delete($id)
+   // {
+   //           Lesson::find($id)->delete();
+   //          return response()->json('Product not found.', 404);
+        
+   // }
+   
 
 
 
