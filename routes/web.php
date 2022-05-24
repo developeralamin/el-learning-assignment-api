@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Frontend\CourseController as FrontendCourseController;
 use App\Http\Controllers\Frontend\LessonController as FrontendLessonController; 
 
@@ -59,7 +60,7 @@ Route::prefix('lesson')->group(function(){
 
 });
 
-
+Route::resource('/about',AboutController::class);
 
 // });
 

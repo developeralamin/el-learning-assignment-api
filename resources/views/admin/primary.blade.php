@@ -100,7 +100,7 @@ $route  = Route::current()->getName();
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ route('about.index') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>About Page</span></a>
             </li>
